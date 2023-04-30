@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "catppuccin",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -93,12 +93,6 @@ return {
         TelescopeResultsTitle = { fg = bg, bg = bg },
       }
     end,
-  },
-
-  options = {
-    g = {
-      icons_enabled = false,
-    },
   },
 
   -- This function is run last and is a good place to configuring
