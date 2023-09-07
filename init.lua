@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "embark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -51,6 +51,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       "ocamllsp",
+      "nim_langserver",
     },
   },
 
@@ -60,7 +61,7 @@ return {
     performance = {
       rtp = {
         -- customize default disabled vim plugins
-        disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
+        disabled_plugins = { "tohtml", "gzip", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
   },
@@ -111,5 +112,12 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    local api = vim.api
+    local terminalGrp = api.nvim_create_augroup("Terminal", { clear = true })
+    api.nvim_create_autocmd("TermOpen", {
+      pattern = "*",
+      command = "setlocal listchars= nonumber norelativenumber",
+      group = terminalGrp,
+    })
   end,
 }
