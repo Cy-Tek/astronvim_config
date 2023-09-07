@@ -18,7 +18,6 @@ return {
   { import = "astrocommunity.editing-support.true-zen-nvim" },
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.python" },
   {
     -- further customize the options set by the community
